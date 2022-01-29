@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import QuestionTitle from './questionTitle';
+import BottomPart from './BottomPart/bottomPart';
 
 export default function QuizScreen() {
   return (
@@ -10,6 +11,7 @@ export default function QuizScreen() {
         <QuestionTitle />
       </View>
       <View style={styles.quizScreenBottomPart}>
+        <BottomPart />
       </View>
     </View>
   );
