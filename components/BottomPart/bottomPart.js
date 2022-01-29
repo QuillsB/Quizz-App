@@ -3,10 +3,11 @@ import { StyleSheet, View } from 'react-native';
 
 import Choices from './choices';
 
-export default function BottomPart() {
+export default function BottomPart(props) {
+  const { quizData } = props;
   return (
     <View style={styles.bottomPartContainer}>
-      <Choices />
+      <Choices responses={quizData} />
     </View>
   );
 }
