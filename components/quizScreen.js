@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import QuestionTitle from './questionTitle';
 import BottomPart from './BottomPart/bottomPart';
 
+import { getQuiz } from '../api/quizApi';
+
 export default function QuizScreen() {
+  const [actualQuestion, setActualQuestion] = useState(null);
+  useEffect(() => {
+    setActualQuestion(getQuiz(1));
+  }, [actualQuestion]);
+
   return (
     <View style={styles.quizScreenContainer}>
       <View style={styles.quizScreenTopPart}>
-        <QuestionTitle />
+        {actualQuestion && (
+          <QuestionTitle title={actualQuestion.question}/>
+        )}
       </View>
       <View style={styles.quizScreenBottomPart}>
-        <BottomPart />
+        {actualQuestion && (
+          <BottomPart quizData={actualQuestion.response}/>
+        )}
       </View>
     </View>
   );

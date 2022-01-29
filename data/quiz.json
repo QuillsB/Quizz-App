@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "question": "This is a question ?",
+    "response": [
+      {
+        "order": "A",
+        "label": "Answer 1",
+        "isCorrect": true,
+        "percentage": "55"
+      },
+      {
+        "order": "B",
+        "label": "Answer 2",
+        "isCorrect": false,
+        "percentage": "17"
+      },
+      {
+        "order": "C",
+        "label": "Answer 3",
+        "isCorrect": false,
+        "percentage": "4"
+      },
+      {
+        "order": "D",
+        "label": "Answer 4",
+        "isCorrect": false,
+        "percentage": "24"
+      }
+    ],
+    "nextQuestionId": 2
+  },
+  {
+    "id": 2,
+    "question": "This is a question 2?",
+    "response": [
+      {
+        "order": "A",
+        "label": "Answer 12",
+        "isCorrect": false,
+        "percentage": "55"
+      },
+      {
+        "order": "B",
+        "label": "Answer 22",
+        "isCorrect": true,
+        "percentage": "17"
+      },
+      {
+        "order": "C",
+        "label": "Answer 32",
+        "isCorrect": false,
+        "percentage": "4"
+      },
+      {
+        "order": "D",
+        "label": "Answer 42",
+        "isCorrect": false,
+        "percentage": "24"
+      }
+    ],
+    "nextQuestionId": 1
+  }
+]
