@@ -1,14 +1,30 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import QuestionTitle from './questionTitle';
 
 export default function QuizScreen() {
   return (
-    <View>
-      <View>
+    <View style={styles.quizScreenContainer}>
+      <View style={styles.quizScreenTopPart}>
         <QuestionTitle />
+      </View>
+      <View style={styles.quizScreenBottomPart}>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  quizScreenContainer: {
+    flex: 1,
+  },
+  quizScreenTopPart: {
+    flex: 1,
+    backgroundColor: '#000000'
+  },
+  quizScreenBottomPart: {
+    flex: 1,
+    backgroundColor: '#E5E5E5'
+  }
+})
