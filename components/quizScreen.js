@@ -5,26 +5,34 @@ import QuestionTitle from './questionTitle';
 import BottomPart from './BottomPart/bottomPart';
 
 import { getQuiz } from '../api/quizApi';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 export default function QuizScreen() {
   const [actualQuestion, setActualQuestion] = useState(null);
+
   useEffect(() => {
-    setActualQuestion(getQuiz(1));
+    if (!actualQuestion) {
+      setActualQuestion(getQuiz(1));
+    }
   }, [actualQuestion]);
 
+  const onSwipeUp = () => {
+    setActualQuestion(getQuiz(actualQuestion.nextQuestionId));
+  };
+
   return (
-    <View style={styles.quizScreenContainer}>
-      <View style={styles.quizScreenTopPart}>
-        {actualQuestion && (
-          <QuestionTitle title={actualQuestion.question}/>
-        )}
-      </View>
-      <View style={styles.quizScreenBottomPart}>
-        {actualQuestion && (
-          <BottomPart quizData={actualQuestion.response}/>
-        )}
-      </View>
-    </View>
+    <GestureRecognizer onSwipeUp={onSwipeUp} style={styles.quizScreenContainer}>
+        <View style={styles.quizScreenTopPart}>
+          {actualQuestion && (
+            <QuestionTitle title={actualQuestion.question}/>
+          )}
+        </View>
+        <View style={styles.quizScreenBottomPart}>
+          {actualQuestion && (
+            <BottomPart quizData={actualQuestion.response}/>
+          )}
+        </View>
+    </GestureRecognizer>
   );
 }
 

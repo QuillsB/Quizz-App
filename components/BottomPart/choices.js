@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 import AnswerSelector from './answerSelector';
@@ -9,11 +9,17 @@ export default function Choices(props) {
 
   const selectOnClick = () => { setIsResponseSelected(true) };
 
+  useEffect(() => {
+    setIsResponseSelected(false);
+  }, responses);
+
   return (
     <View style={styles.choicesContainer}>
-      <Text style={styles.choiceTitleText}>SELECT A CHOICE</Text>
+      <Text style={styles.choiceTitleText}>
+        {isResponseSelected ? "ANSWER" : "SELECT A CHOICE"}
+      </Text>
       {responses.map((response) => (
-        <AnswerSelector answer={response} isResponse={isResponseSelected} onClick={selectOnClick} />
+        <AnswerSelector key={response.id} answer={response} isResponse={isResponseSelected} onClick={selectOnClick} />
       ))}
     </View>
   );
