@@ -4,11 +4,11 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import check from '../../assets/Check.png'
 
 export default function AnswerSelector(props) {
-  const { answer, isResponse, onClick } = props;
+  const { answer, isResponse, onClick, key } = props;
 
   const displayChoices = () => {
     return (
-      <View style={styles.answerSelectorContainer} onStartShouldSetResponder={onClick}>
+      <View key={key} style={styles.answerSelectorContainer} onStartShouldSetResponder={onClick}>
         <Text style={styles.answerOrderText}>{answer.order}</Text>
         <Text style={styles.answerLabelText}>{answer.label}</Text>
       </View>
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
     width: 17,
     height: 17,
     position: 'absolute',
-    left: -8,
-    color: 'green'
+    left: -8
   }
 })
