@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
-import AnswerSelector from './answerSelector';
+import AnswerSelector from 'components/BottomPart/answerSelector';
 
-import arrowUp from '../../assets/arrow-up.png';
+import arrowUp from 'assets/arrow-up.png';
 
 export default function Choices(props) {
   const { responses } = props;

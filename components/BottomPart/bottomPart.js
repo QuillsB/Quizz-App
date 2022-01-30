@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Choices from './choices';
+import Choices from 'components/BottomPart/choices';
 
 export default function BottomPart(props) {
   const { quizData } = props;

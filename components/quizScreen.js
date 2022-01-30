@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-
-import QuestionTitle from './questionTitle';
-import BottomPart from './BottomPart/bottomPart';
-
-import { getQuiz } from '../api/quizApi';
 import GestureRecognizer from 'react-native-swipe-gestures';
+
+import QuestionTitle from 'components/questionTitle';
+import BottomPart from 'components/BottomPart/bottomPart';
+
+import { getQuiz } from 'api/quizApi';
 
 export default function QuizScreen() {
   const [actualQuestion, setActualQuestion] = useState(null);

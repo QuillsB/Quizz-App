@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
-import check from '../../assets/Check.png'
+import check from 'assets/Check.png'
 
 export default function AnswerSelector(props) {
   const { answer, isResponse, onClick } = props;
