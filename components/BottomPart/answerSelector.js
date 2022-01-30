@@ -19,16 +19,18 @@ export default function AnswerSelector(props) {
 
   const displayResponse = () => {
     return (
-      <LinearGradient
-        colors={answer.isCorrect ? ['#E263BF', '#FFA06A'] : ['#BCD0E2', '#BCD0E2']}
-        start={{ x: -1, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.answerResponseCorrect}
-      >
+      <View style={styles.answerSelectorContainer}>
+        <LinearGradient
+          colors={answer.isCorrect ? ['#E263BF', '#FFA06A'] : ['#BCD0E2', '#BCD0E2']}
+          start={{ x: -1, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ ...styles.answerResponseCorrect, width: (answer.percentage * 331 / 100) }}
+        >
+        </LinearGradient>
         {answer.isCorrect && <Image source={check} style={styles.checkIcon}/> }
         <Text style={styles.answerOrderText}>{answer.percentage}%</Text>
         <Text style={styles.answerLabelText}>{answer.label}</Text>
-      </LinearGradient>
+      </View>
     );
   };
 
@@ -52,10 +54,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     maxWidth: 400,
     maxHeight: 50,
+    height: 50,
     borderRadius: 7,
     marginBottom: 10,
     alignItems: 'center',
-    shadowOffset: { width: 20, height: 10 }
+    shadowOffset: { width: 20, height: 10 },
+    position: 'absolute'
   },
   answerOrderText: {
     flex: 1,
