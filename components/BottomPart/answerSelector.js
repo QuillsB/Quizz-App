@@ -1,14 +1,16 @@
 import React from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
 
+import { LinearGradient } from 'expo-linear-gradient';
+
 import check from '../../assets/Check.png'
 
 export default function AnswerSelector(props) {
-  const { answer, isResponse, onClick, key } = props;
+  const { answer, isResponse, onClick } = props;
 
   const displayChoices = () => {
     return (
-      <View key={key} style={styles.answerSelectorContainer} onStartShouldSetResponder={onClick}>
+      <View style={styles.answerSelectorContainer} onStartShouldSetResponder={onClick}>
         <Text style={styles.answerOrderText}>{answer.order}</Text>
         <Text style={styles.answerLabelText}>{answer.label}</Text>
       </View>
@@ -17,7 +19,14 @@ export default function AnswerSelector(props) {
 
   const displayResponse = () => {
     return (
-      <View style={answer.isCorrect ? styles.answerResponseCorrect : styles.answerResponseUnCorrect}>
+      <View style={styles.answerSelectorContainer}>
+        <LinearGradient
+          colors={answer.isCorrect ? ['#E263BF', '#FFA06A'] : ['#BCD0E2', '#BCD0E2']}
+          start={{ x: -1, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ ...styles.answerResponseCorrect, width: (answer.percentage * 331 / 100) }}
+        >
+        </LinearGradient>
         {answer.isCorrect && <Image source={check} style={styles.checkIcon}/> }
         <Text style={styles.answerOrderText}>{answer.percentage}%</Text>
         <Text style={styles.answerLabelText}>{answer.label}</Text>
@@ -45,22 +54,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     maxWidth: 400,
     maxHeight: 50,
+    height: 50,
     borderRadius: 7,
-    backgroundColor: "#E263BF",
     marginBottom: 10,
     alignItems: 'center',
-    shadowOffset: { width: 20, height: 10 }
-  },
-  answerResponseUnCorrect : {
-    flex: 1,
-    flexDirection: 'row',
-    maxWidth: 400,
-    maxHeight: 50,
-    borderRadius: 7,
-    backgroundColor: "#BCD0E2",
-    marginBottom: 10,
-    alignItems: 'center',
-    shadowOffset: { width: 20, height: 10 }
+    shadowOffset: { width: 20, height: 10 },
+    position: 'absolute'
   },
   answerOrderText: {
     flex: 1,

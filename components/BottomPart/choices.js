@@ -22,7 +22,7 @@ export default function Choices(props) {
           {isResponseSelected ? "ANSWER" : "SELECT A CHOICE"}
         </Text>
         {responses.map((response) => (
-          <AnswerSelector key={response.id} answer={response} isResponse={isResponseSelected} onClick={selectOnClick} />
+          <AnswerSelector key={response.order} answer={response} isResponse={isResponseSelected} onClick={selectOnClick} />
         ))}
       </View>
       {isResponseSelected && (
