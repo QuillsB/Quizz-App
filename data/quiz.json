@@ -7,25 +7,25 @@
         "order": "A",
         "label": "Steal Taco's",
         "isCorrect": true,
-        "percentage": "55"
+        "percentage": 55
       },
       {
         "order": "B",
         "label": "Sign Transactions",
         "isCorrect": false,
-        "percentage": "17"
+        "percentage": 17
       },
       {
         "order": "C",
         "label": "GetFree Bagel's",
         "isCorrect": false,
-        "percentage": "4"
+        "percentage": 4
       },
       {
         "order": "D",
         "label": "Marry Adam Holmes",
         "isCorrect": false,
-        "percentage": "24"
+        "percentage": 24
       }
     ],
     "nextQuestionId": 2
@@ -38,25 +38,25 @@
         "order": "A",
         "label": "Answer 12",
         "isCorrect": false,
-        "percentage": "55"
+        "percentage": 55
       },
       {
         "order": "B",
         "label": "Answer 22",
         "isCorrect": true,
-        "percentage": "17"
+        "percentage": 17
       },
       {
         "order": "C",
         "label": "Answer 32",
         "isCorrect": false,
-        "percentage": "4"
+        "percentage": 4
       },
       {
         "order": "D",
         "label": "Answer 42",
         "isCorrect": false,
-        "percentage": "24"
+        "percentage": 24
       }
     ],
     "nextQuestionId": 1
