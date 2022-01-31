@@ -7,10 +7,13 @@ import BottomPart from 'components/BottomPart/bottomPart';
 
 import { getQuiz } from 'api/quizApi';
 
-export default function QuizScreen() {
+export default function QuizScreen(props) {
+  const { getQuizQuestion } = props;
+
   const [actualQuestion, setActualQuestion] = useState(null);
 
   useEffect(() => {
+    getQuizQuestion(1);
     if (!actualQuestion) {
       setActualQuestion(getQuiz(1));
     }
